@@ -1,23 +1,28 @@
 //api key: 7dt5hjlwgudockvh027zf1gijdvye9jl49zria042nxif8xc
 
+const url = 'http://api.snooth.com/wines/?akey=7dt5hjlwgudockvh027zf1gijdvye9jl49zria042nxif8xc'
+const name = $('#name');
+const type = $('#type');
+const color = $('#color');
+const sort = $('#sort');
+
 function getUrl(){
-	const url = 'http://api.snooth.com/wines/?akey=7dt5hjlwgudockvh027zf1gijdvye9jl49zria042nxif8xc'
-	var name = $('#name');
-	var type = $('#type');
-	var color = $('#color');
 	$('button').click(function(event){
 		event.preventDefault();
-		url2 = url+`&q=${name.val()}&t=${type.val()}&color=${color.val()}`;
-		name.val('');
-		type.val('');
-		color.val('');
+		url2 = url+`&q=${name.val()}&t=${type.val()}&color=${color.val()}&s=${sort.val()}`;
 		loadData(url2, displayData);
 		console.log(url2);
 	});
 }
 
+function sortChanged(){
+	const url2 = url+`&q=${name.val()}&t=${type.val()}&color=${color.val()}&s=${sort.val()}`;
+	loadData(url2, displayData);
+}
+
 function loadData(url, callback){
-	$.getJSON(url, callback).fail(showErr);
+	$.getJSON(url, callback);
+	console.log(url);
 }
 
 function showErr(err){

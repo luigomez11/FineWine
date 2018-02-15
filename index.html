@@ -34,7 +34,17 @@
 			</select><br><br>
 			<button type="submit">Submit</button>
 		</form>
-		<section id="results"></section>
+			<select name="sort" id="sort" onchange="sortChanged()">
+				<option value="" selected>Relevance</option>
+				<option value="sr">Rank</option>
+				<option value="price+asc">Ascending Price</option>
+				<option value="price+desc">Descending Price</option>
+				<option value="qpr">Quality Price Ratio</option>
+				<option value="vintage+asc">Ascending Vintage</option>
+				<option value="vintage+desc">Descending Vintage</option>
+			</select>
+		<section id="results">
+		</section>
 	</main>
 </body>
 <script type="text/javascript" src="index.js"></script>
