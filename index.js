@@ -29,8 +29,12 @@ function showErr(err){
 }
 
 function displayData(data){
+	if(data.wines){
 	const results = data.wines.map((item, index) => renderResults(item));
 	$('#results').html(results);
+}else{
+	showErr();
+}
 }
 
 function renderResults(result){
@@ -43,7 +47,7 @@ function renderResults(result){
 				<img src="${result.image}" alt="image of ${result.name}">
 			</a>
 			<p>Region: ${result.region}</p>
-			<p>Type: ${result.region}</p>
+			<p>Type: ${result.type}</p>
 			<p>Price: $ ${result.price}</p>
 			<p>Snooth Rating: ${result.snoothrank}/5</p>
 		</div>
