@@ -6,7 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<main role="main">
+	<div class="welcome">
+		<h1>Welcome to the website</h1>
+		<p>Get price and region information on wine. Powered by snooth.</p>
+		<button class="over">Over 21</button>
+		<button class="under">Under 21</button>
+	</div>
+	<main role="main" class="hidden">
 		<h1>Wine Search</h1>
 		<form action="#">
 			<label for="name">Name: </label>
@@ -32,7 +38,7 @@
 				<option value="amber">Amber</option>
 				<option value="clear">Clear</option>
 			</select><br><br>
-			<button type="submit">Submit</button>
+			<button type="submit" class="submit">Submit</button>
 		</form>
 			<select name="sort" id="sort" onchange="sortChanged()">
 				<option value="" selected>Relevance</option>

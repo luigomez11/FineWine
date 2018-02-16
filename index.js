@@ -7,7 +7,7 @@ const color = $('#color');
 const sort = $('#sort');
 
 function getUrl(){
-	$('button').click(function(event){
+	$('.submit').click(function(event){
 		event.preventDefault();
 		url2 = url+`&q=${name.val()}&t=${type.val()}&color=${color.val()}&s=${sort.val()}`;
 		loadData(url2, displayData);
@@ -59,4 +59,20 @@ function renderResults(result){
 	`
 }
 
+function welcome(){
+	$('.over').click(function(event){
+		$('main').removeClass('hidden');
+		$('.welcome').addClass('hidden');
+	});
+
+	$('.under').click(function(event){
+		$('.welcome').html(`
+			<a href="https://en.wikipedia.org/wiki/Legal_drinking_age">
+				<p>Sorry, you are too young to view the contents of this site</p>
+			</a>
+			`);
+	});
+}
+
+welcome();
 getUrl();
