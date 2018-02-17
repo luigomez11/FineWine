@@ -28,7 +28,7 @@ function loadData(url, callback){
 function showErr(err){
 	const outputElem = $('#results');
 	const errMsg = (
-			`<p>We couldn't find any results</p>`
+			`<p class=font>No results found.</p>`
 		);
 	outputElem.html(errMsg);
 }
@@ -43,32 +43,54 @@ function displayData(data){
 }
 
 function renderResults(result){
-	return `
-		<div>
+	if(result.snoothrank>0){
+				return `
+		<div class="col-4">
+			<div class="resultBorder">
 			<a href="${result.link}" target="_blank">
-				<h4>${result.name}</h4>
+				<img class="wineImg" src="${result.image}" alt="image of ${result.name}">
 			</a>
 			<a href="${result.link}" target="_blank">
-				<img src="${result.image}" alt="image of ${result.name}">
+				<p class="wineName">${result.name}</p>
 			</a>
 			<p>Region: ${result.region}</p>
 			<p>Type: ${result.type}</p>
 			<p>Price: $ ${result.price}</p>
 			<p>Snooth Rating: ${result.snoothrank}/5</p>
+			</div>
 		</div>
 	`
+			}else {
+				return `
+		<div class="col-4">
+			<div class="resultBorder">
+			<a href="${result.link}" target="_blank">
+				<img class="wineImg" src="${result.image}" alt="image of ${result.name}">
+			</a>
+			<a href="${result.link}" target="_blank">
+				<p class="wineName">${result.name}</p>
+			</a>
+			<p>Region: ${result.region}</p>
+			<p>Type: ${result.type}</p>
+			<p>Price: $ ${result.price}</p>
+			<p>Snooth Rating: N/A</p>
+			</div>
+		</div>
+	`
+			}
 }
 
 function welcome(){
 	$('.over').click(function(event){
 		$('main').removeClass('hidden');
+		$('header').removeClass('hidden');
 		$('.welcome').addClass('hidden');
 	});
 
 	$('.under').click(function(event){
 		$('.welcome').html(`
 			<a href="https://en.wikipedia.org/wiki/Legal_drinking_age">
-				<p>Sorry, you are too young to view the contents of this site</p>
+				<p class="underClick">Sorry, you are too young to view the contents of this site</p>
 			</a>
 			`);
 	});

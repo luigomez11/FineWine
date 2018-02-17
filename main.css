@@ -2,6 +2,60 @@
 	box-sizing: border-box;
 }
 
+/*html { 
+  background:  url(https://media.giphy.com/media/3zfox4LvqnIas/giphy.gif) no-repeat center center fixed; 
+  background-size: cover;
+}*/
+
+body * {
+	max-width: 1080px;
+	margin: auto 0;
+}
+
+header img {
+	width: 100px;
+}
+
 .hidden{
 	display: none;
+}
+
+header, .welcome, #searchInput {
+}
+
+.padLeft {
+	padding-left: 10px;
+}
+
+.marginLeft {
+	margin-left: 20px;
+}
+
+.title {
+	font-size: 100px;
+}
+
+.container {
+	position: fixed;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	
+}
+
+#searchInput {
+	position: absolute;
+	left: 100px;
+}
+
+.sort{
+	position: fixed;
+	top: 150px;
+	right: 20px;
+}
+
+#results{
+	position: absolute;
+	top: 300px;
 }

@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Wine Search</title>
 	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="main2.css">
+	<link rel="stylesheet" type="text/css" href="floatGrid.css">
 </head>
 <body>
-	<div class="welcome">
-		<h1>Welcome to the website</h1>
-		<p>Get price and region information on wine. Powered by snooth.</p>
-		<button class="over">Over 21</button>
-		<button class="under">Under 21</button>
-	</div>
-	<main role="main" class="hidden">
-		<h1>Wine Search</h1>
+	<header role="header" class=hidden>
+		<div class="container col-12">
+		<img src="logo.png" class="logo" alt="app logo">
+		<a href="http://www.snooth.com/" target="_blank">
+			<img src="http://em1.isnooth.com/img/site/snooth-header-logo.png" class="snooth" alt="api homepage logo">
+		</a>
+<div id="searchInput">
 		<form action="#">
 			<label for="name">Name: </label>
-			<input type="text" id="name" name="name" placeholder="name..."><br><br>
-			<label for="type">Type: </label>
+			<input type="text" id="name" name="name" placeholder="name...">
+			<label for="type" class="marginLeft">Type: </label>
 			<select name="type" id="type">
 				<option value="wine" selected>Wine</option>
 				<option value="spirits">Spirit</option>
@@ -28,8 +30,8 @@
 				<option value="cider">Cider</option>
 				<option value="sake">Sake</option>
 				<option value="">All</option>
-			</select><br><br>
-			<label for="color">Color: </label>
+			</select>
+			<label for="color" class="marginLeft">Color: </label>
 			<select name="color" id="color">
 				<option value=""></option>
 				<option value="red" selected>Red</option>
@@ -37,9 +39,15 @@
 				<option value="rose">Rose</option>
 				<option value="amber">Amber</option>
 				<option value="clear">Clear</option>
-			</select><br><br>
-			<button type="submit" class="submit">Submit</button>
+			</select>
+			<button type="submit" class="submit marginLeft">Submit</button>
 		</form>
+	</div>
+</div>
+	</header>
+	<main role="main" class="hidden">	
+	<div class="sort">
+			<label for="sort">Sort by: </label>
 			<select name="sort" id="sort" onchange="sortChanged()">
 				<option value="" selected>Relevance</option>
 				<option value="sr">Rank</option>
@@ -49,9 +57,16 @@
 				<option value="vintage+asc">Ascending Vintage</option>
 				<option value="vintage+desc">Descending Vintage</option>
 			</select>
+		</div>
 		<section id="results">
 		</section>
 	</main>
+	<div class="welcome col-12">
+		<img class="title" src="logo.png">
+		<p>Get price and region information on wine. Powered by snooth.</p>
+		<button class="over">Over 21</button>
+		<button class="under">Under 21</button>
+	</div>
 </body>
 <script type="text/javascript" src="index.js"></script>
 </html>
