@@ -6,6 +6,8 @@ const type = $('#type');
 const color = $('#color');
 const sort = $('#sort');
 
+
+//sets up api url with user input and selections added
 function getUrl(){
 	$('.submit').click(function(event){
 		event.preventDefault();
@@ -15,16 +17,20 @@ function getUrl(){
 	});
 }
 
+
+//listens for user sort selection and sorts results
 function sortChanged(){
 	const url2 = url+`&q=${name.val()}&t=${type.val()}&color=${color.val()}&s=${sort.val()}`;
 	loadData(url2, displayData);
 }
 
+//loads the api and runs callback function
 function loadData(url, callback){
 	$.getJSON(url, callback);
 	console.log(url);
 }
 
+//error functions when no results are returned
 function showErr(err){
 	const outputElem = $('#results');
 	const errMsg = (
@@ -33,6 +39,7 @@ function showErr(err){
 	outputElem.html(errMsg);
 }
 
+//display api data on DOM
 function displayData(data){
 	if(data.wines){
 	const results = data.wines.map((item, index) => renderResults(item));
@@ -42,6 +49,8 @@ function displayData(data){
 }
 }
 
+
+//adds results html to index
 function renderResults(result){
 	if(result.snoothrank>0){
 				return `
