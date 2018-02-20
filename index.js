@@ -57,7 +57,7 @@ function renderResults(result){
 		<div class="col-4">
 			<div class="resultBorder">
 			<a href="${result.link}" target="_blank">
-				<img class="wineImg" src="${result.image}" alt="image of ${result.name}">
+				<img class="wineImg" src="${result.image.replace('https','http')}" alt="image of ${result.name}">
 			</a>
 			<a href="${result.link}" target="_blank">
 				<p class="wineName">${result.name}</p>
@@ -74,7 +74,7 @@ function renderResults(result){
 		<div class="col-4">
 			<div class="resultBorder">
 			<a href="${result.link}" target="_blank">
-				<img class="wineImg" src="${result.image}" alt="image of ${result.name}">
+				<img class="wineImg" src="${result.image.replace('https','http')}" alt="image of ${result.name}">
 			</a>
 			<a href="${result.link}" target="_blank">
 				<p class="wineName">${result.name}</p>
