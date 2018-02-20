@@ -1,6 +1,6 @@
 //api key: 7dt5hjlwgudockvh027zf1gijdvye9jl49zria042nxif8xc
 
-const url = 'http://api.snooth.com/wines/?akey=7dt5hjlwgudockvh027zf1gijdvye9jl49zria042nxif8xc'
+const url = 'https://api.snooth.com/wines/?akey=7dt5hjlwgudockvh027zf1gijdvye9jl49zria042nxif8xc'
 const name = $('#name');
 const type = $('#type');
 const color = $('#color');
